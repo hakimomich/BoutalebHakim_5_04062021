@@ -1,0 +1,43 @@
+@font-face {
+    font-family: 'montserrat';
+    src: url("font/Montserrat-SemiBoldItalic.ttf") format("ttf");
+}
+@font-face {
+    font-family: 'montserrit';
+    src: url("font/Montserrat-MediumItalic.ttf");
+}
+@font-face {
+    font-family: 'regular';
+    src: url("font/Montserrat-Regular.ttf");
+}
+.navbar__menu__ul__li a
+{
+font-size: 20px;
+font-family:'montserrat';
+}
+
+h1
+{
+    font-family: 'montserrat';
+}
+
+.text-header
+{
+    font-size: 20px;
+    font-family: 'montserrat';
+}
+
+.bund__legend
+{
+    font-size: 20px;
+}
+
+.bund__legend button
+{
+    font-size: 20px;
+}
+
+.footertxt p
+{
+    font-size: 18px;
+}

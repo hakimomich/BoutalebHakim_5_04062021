@@ -1,0 +1,56 @@
+.masection
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 50px;
+    
+}
+
+.bund
+{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    box-shadow: 2px 2px 5px rgb(210 210 210);
+    border-radius: 20px;
+    margin-bottom: 50px;
+    &__imgSection img
+    {
+        width: 100%;
+        border-radius: 20px 20px 0 0;
+    }
+    &__legend
+    {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+.bund__legend
+{
+    
+&__button
+{
+    border-radius: 20px;
+    border: 1px solid #f8f9f9;
+    background-color: white;
+    padding: 10px;
+    box-shadow: 2px 2px 5px rgb(210 210 210);
+    width: 45%;
+    margin-right: 10px;
+}
+&__p
+{
+    width: 40%;
+    margin-left: 10px;
+}
+}
