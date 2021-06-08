@@ -1,0 +1,115 @@
+.bund__legend
+{
+    
+&__button
+{
+    border-radius: 20px;
+    border: 1px solid #f8f9f9;
+    background-color: white;
+    padding: 10px;
+    box-shadow: 2px 2px 5px rgb(210 210 210);
+    width: 45%;
+    margin-right: 15px;
+    transform: scale(1);
+    transition-duration: 500ms;
+    transform-origin: 50% 50%;
+    &:hover
+    {
+        transform: scale(1.1);
+        box-shadow: 3px 3px 5px rgb(210 210 210);
+    }
+}
+}
+//Produits
+
+.buttontwo button
+{
+    font-size: 16px;
+    padding:12px;
+    border-radius: 20px;
+    border: 1px solid #f8f9f9;
+    background-color: white;
+    box-shadow: 3px 3px 5px rgb(210 210 210);
+    margin-bottom: 20px;
+    transform: scale(1);
+    transition-duration: 500ms;
+    transform-origin: 50% 50%;
+    &:hover
+    {
+        transform: scale(1.1);
+        box-shadow: 3px 3px 5px rgb(210 210 210);
+    }
+}
+.button-retour button
+{
+    width: 20%;
+    margin-left: 40%;
+    margin-right: 40%;
+    margin-bottom: 60px;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 20px;
+    border: 1px solid #f8f9f9;
+    background-color: white;
+    box-shadow: 3px 3px 5px rgb(210 210 210);
+    transform: scale(1);
+    transition-duration: 500ms;
+    transform-origin: 50% 50%;
+    &:hover
+    {
+        transform: scale(1.1);
+        box-shadow: 3px 3px 5px rgb(210 210 210);
+    }
+}
+.button-retour a
+{
+    text-decoration: none;
+}
+// recap
+
+.button-valid button
+{
+    width: 20%;
+    margin-left: 40%;
+    margin-right: 40%;
+    padding: 15px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    background-color: white;
+    border: 1px solid #f8f9f9;
+    font-size: 14px;
+    box-shadow: 3px 3px 5px rgb(210 210 210);
+    transform: scale(1);
+    transition-duration: 500ms;
+    transform-origin: 50% 50%;
+    &:hover
+    {
+        transform: scale(1.1);
+        box-shadow: 3px 3px 5px rgb(210 210 210);
+    }
+}
+.button-videp button
+{
+    width: 100%;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    padding: 15px;
+    border-radius: 20px;
+    background-color: white;
+    border: 1px solid #f8f9f9;
+    font-size: 14px;
+    box-shadow: 3px 3px 5px rgb(210 210 210);
+    transform: scale(1);
+    transition-duration: 500ms;
+    transform-origin: 50% 50%;
+    &:hover
+    {
+        transform: scale(1.1);
+        box-shadow: 3px 3px 5px rgb(210 210 210);
+    }
+}
+.button-videp i
+{
+    margin-left: 5px;
+}

@@ -72,6 +72,20 @@
 }
 .navbar__menu__2__ul li
 {
+    transform: scale(1);
+    transition-duration: 500ms;
+    transform-origin: 50% 50%;
     margin-bottom: 8px;
 }
+.navbar__menu__2__ul li:hover
+{
+    transform: scale(1.2);
+}
+}
+@media (max-width:630px)
+{
+    .navbar__menu
+    {
+        width: 16%;
+    }
 }

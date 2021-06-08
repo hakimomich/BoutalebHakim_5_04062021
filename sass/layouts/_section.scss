@@ -33,24 +33,122 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        &__p
+    {
+        width: 40%;
+        margin-left: 10px;
+    }
     }
 }
-.bund__legend
+//Page produit
+
+.produit
 {
-    
-&__button
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 8%;
+    margin-bottom: 8%;
+    background-color: $primary-color;
+    padding-top: 20px;
+    &__img
+    {
+        width:60%;
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+}
+.produit img
 {
+    width: 100%;
     border-radius: 20px;
-    border: 1px solid #f8f9f9;
-    background-color: white;
-    padding: 10px;
-    box-shadow: 2px 2px 5px rgb(210 210 210);
-    width: 45%;
-    margin-right: 10px;
 }
-&__p
+
+.produit div
 {
-    width: 40%;
-    margin-left: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
+
+// recapitulatif
+
+.recap
+{
+    width: 80%;
+    margin: 10%;
+    border: 1px solid $primary-color;
+    background-color: $primary-color;
+}
+.recap h4
+{
+    text-align: center;
+    margin-bottom: 50px;
+}
+.macommande
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid white;
+}
+.element
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid white;
+    box-shadow: 3px 3px 5px rgb(210 210 210);
+    padding: 15px;
+    width: 80%;
+    border-radius: 20px;
+    &__nom
+    {
+        margin-right: 40px;
+    }
+    &__prix
+    {
+        margin-left: 40px;
+        margin-right: 10px;
+    }
+}
+// Recapfinal
+
+.recap-final
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border: 1px solid $primary-color;
+    background-color: $primary-color;
+    &__numcom
+    {
+        border: 1px solid white;
+        background-color: white;
+        width: 60%;
+        margin-left: 20%;
+        margin-right: 20%;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    
+}
+.recap-final__numcom h5
+{
+    text-align: center;
+}
+.recap-final__numcom h4
+{
+    margin-left: 30px;
 }
