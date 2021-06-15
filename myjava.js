@@ -6,12 +6,18 @@ function getcam()
     .then( res=>res.json())
     .then( data => 
     {
-        
+        console.log(cameras);
     }
 }
 
-let cams = document.getElementById('camera')
-        const myconst = document.getElementsByClassName("bund__legend__button");
-        myconst.AddEvenListener('click', function(){
-            location.href='https://hakimomich.github.io/BoutalebHakim_5_04062021/produit.html'
-        })
+const bouton = document.getElementsByClassName('bund__legend__button');
+bouton.addEventListener('click', function () {
+    const imgprod = document.getElementsByClassName('produit__img');
+    const myimg = document.createElement('img');
+    imgprod.appendChild(myimg);
+    myimg.setAttribute('src', )
+    myimg.setAttribute('alt', )
+    myimg.setAttribute('title', )
+})
+
+
