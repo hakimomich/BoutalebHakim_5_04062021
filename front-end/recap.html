@@ -12,7 +12,7 @@
 
     <title>Recapitulatif panier</title>
 </head>
-<body>
+<body onload="localstor()">
     <div class="container">
         <nav class="navbar">
             <div class="navbar__logo">
@@ -49,25 +49,20 @@
         </header>
 
     <section class="recap">
-        
-            <h4>Vôtre Commande :</h4>
-        
-        <div class="macommande">
 
-            <div class="element">
-                <div class="element__nom">Nom de mon objet</div>
-                <div>
-                <span class="element__prix">Prix</span>
-                <i class="fas fa-trash-alt"></i>
-                </div>
-            </div>
-            
-            <h4>Montant total :</h4>
-            <div class="button-videp">
-                <button>Vider mon panier <i class="fas fa-trash-alt"></i></button>
-            </div>
+        <div class="mesproduits">
+
+        <div id="macommande">
+
         </div>
-        <h4>Pour valider votre commande, merci de remplir ce formulaire :</h4>
+        
+        </div>    
+            
+        <div class="button-videp">
+                <button>Vider mon panier <i class="fas fa-trash-alt"></i></button>
+        </div>
+    
+            <h4>Pour valider votre commande, merci de remplir ce formulaire :</h4>
         <div class="form">
              
             <div class="inputsy">
@@ -102,12 +97,13 @@
     <div class="button-retour">
         <button><a href="index.html">Retour à l'Acceuil</a></button>
     </div>
-    </div>
+
     <footer>
         <div class="footertxt">
         <p>Orinoco | Entreprise de commerce en ligne</p>
           <p>http//:github.io052635111144444</p>
-        </div>
+        </div>   
+    </div>
     </footer>
 </body>
 </html>
