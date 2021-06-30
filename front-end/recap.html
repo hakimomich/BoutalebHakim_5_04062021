@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/50efa1275e.js" crossorigin="anonymous"></script>
     <script src="myjava.js"></script>
 
@@ -12,11 +12,11 @@
 
     <title>Recapitulatif panier</title>
 </head>
-<body>
+<body onload="affichePanier()" onload="validcom()">
     <div class="container">
         <nav class="navbar">
             <div class="navbar__logo">
-            <a href="index.html"><img src="images/logo.png" alt="logo" /></a>
+            <a href="index.html"><img src="img/logo.png" alt="logo" /></a>
             </div>
             <div class="navbar__menu">
                 <ul class="navbar__menu__ul">
@@ -38,7 +38,7 @@
                 </div>
             </div>
             <div class="navbar__mon-panier">
-                <i class="fas fa-shopping-basket fa-2x"></i>
+                <a href="recap.html"><i class="fas fa-shopping-basket fa-2x"></i></a>
             </div>
         </nav>
         <header>
@@ -51,7 +51,29 @@
     <section class="recap">
 
         <div class="mesproduits">
-
+        <table class="table table-primary table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Produits</th>
+                    <th>Prix</th>
+                    <th>action</th>
+                </tr>
+            </thead>
+            <tbody id="commandes">
+                
+            </tbody>
+            <tfoot>
+                <th id="totalpanier"></th>
+                <tr>
+                    <th>Total du panier :</th>
+                        <th>
+                            <tr>
+                                
+                            </tr>
+                        </th>
+                    </tr>
+            </tfoot>
+        </table>
         <div id="macommande">
 
         </div>
@@ -59,39 +81,39 @@
         </div>    
             
         <div class="button-videp">
-                <button>Vider mon panier <i class="fas fa-trash-alt"></i></button>
+                <button onclick="supprimePanier()">Vider mon panier <i class="fas fa-trash-alt"></i></button>
         </div>
     
             <h4>Pour valider votre commande, merci de remplir ce formulaire :</h4>
-        <div class="form">
+        <div class="form" method="POST" action="#">
              
             <div class="inputsy">
             <label>Vôtre prénom :</label>
-            <input type="text">
+            <input class="prenom" type="text">
             </div>
 
             <div class="inputsy">
             <label>Vôtre nom :</label>
-            <input type="text">
+            <input class="nom" type="text">
             </div>
 
             <div class="inputsy">
             <label>Vôtre Adresse :</label>
-            <input type="textarea">
+            <input class="adresse" type="textarea">
             </div>
 
             <div class="inputsy">
             <label>Vôtre Ville :</label>
-            <input type="text">
+            <input class="ville" type="text">
             </div>
 
             <div class="inputsy">
             <label>Vôtre Adresse mail :</label>
-            <input type="text">
+            <input class="mail" type="text">
             </div>
         </div>
             <div class="button-valid">
-            <button>Valider Votre Commande</button>
+            <a href="recapfinal.html"><button onclick="recupdonnee()" >Valider Votre Commande</button></a>
             </div>
     </section>   
     <div class="button-retour">
