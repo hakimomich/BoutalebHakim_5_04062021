@@ -1,6 +1,8 @@
 let produit;
 let panier = [];
-let tabdonne = [];
+let contact = {};
+let product = [];
+let tableauGlobal = product.concat(contact);
 
 let chainePanierStock = localStorage.getItem('panier');
 if(chainePanierStock != null)
@@ -75,10 +77,14 @@ function localstor()
     localStorage.setItem('panier', chainePanier);
 }
 
+
+
 function affichePanier() 
 {  
-
+    let somme = 0;
     let prod = document.getElementById('commandes')
+    let totalpan = document.getElementById('totalpanier')
+
     for( let i=0;i<panier.length;i++)
     {  
         prod.innerHTML += `
@@ -90,11 +96,19 @@ function affichePanier()
                     <i class="fas fa-trash"></i>
                 </button>
             </td>
-        </tr> 
-        `;   
-    /* "Produit : " + panier[i].name + " " + "Prix : " + panier[i].price;*/
-        
-    }    
+        </tr>    
+        `; 
+        totalpan.innerHTML = `
+    <tr>
+        <th>Total du panier :</th>
+        <th>
+            <tr>
+             ${somme = somme + panier[i].price/100} &euro;           
+            </tr>
+        </th>
+    </tr>
+         `; 
+    }  
 }
 
 function supprimePanier(i)
@@ -104,6 +118,15 @@ function supprimePanier(i)
     localStorage.setItem('panier', pan);
     window.location.reload();
 }
+
+function videPanier() 
+{
+    panier.splice(0, panier.lenght);
+    let panvid = JSON.stringify(panier);
+    localStorage.setItem('panier', panvid);
+    window.location.reload();
+}
+
 
 function recupdonnee() 
 {  
@@ -116,7 +139,29 @@ function recupdonnee()
          mail :  document.querySelector('.mail').value
     }  
     
-    tabdonne.push(donnee);
+    contact.push(donnee);
+}
+
+function recupIdProduct()
+{
+    for( let i=0; i<panier.lenght; i++)
+    {
+        let idproduct = panier[i]._id;
+        product.push(idproduct);
+    }
+}
+
+function sendData(data)
+{
+    let requete = new XMLHttpRequest();
+    let FD = new FormData();
+
+    for( tableauGlobal of data)
+    {
+        FD.append( tableauGlobal, data[tableauGlobal]);
+    }
+    requete.open('POST', 'front-end/recapfinal.html');
+    requete.send(FD);
 }
 
 function getRandomInt(max)
@@ -127,10 +172,10 @@ function getRandomInt(max)
 function recapfinal()
 {
     let recap = document.querySelector('.recap-final__numcom')
-    recap.innerHTML = `  
-    Nom : ${tabdonne.nom + '' + tabdonne.pren}        
-    <h5>Recapitulatif de vôtre commande : ${affichePanier()}</h5>
-    <h4>Numero de commande :</h4>${getRandomInt(max)}
-    <h4>Montant total de vôtre commande : </h4>${(produit.price)+=price[i]}
+    recap.innerHTML += `  
+    Nom : ${tableauGlobal[product._id] + '' + tableauGlobal[contact.nom]}        
+    <h5>Recapitulatif de vôtre commande : ${tableauGlobal[product]}</h5>
+    <h4>Numero de commande :</h4>
+    <h4>Montant total de vôtre commande : </h4>
     `;
 }

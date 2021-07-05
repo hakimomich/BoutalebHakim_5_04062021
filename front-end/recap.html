@@ -12,13 +12,13 @@
 
     <title>Recapitulatif panier</title>
 </head>
-<body onload="affichePanier()" onload="validcom()">
+<body onload="affichePanier()">
     <div class="container">
         <nav class="navbar">
             <div class="navbar__logo">
             <a href="index.html"><img src="img/logo.png" alt="logo" /></a>
             </div>
-            <div class="navbar__menu">
+            <!--<div class="navbar__menu">
                 <ul class="navbar__menu__ul">
                     <li class="navbar__menu__ul__li"><a href="index.html">Acceuil</a></li>
                     <li class="navbar__menu__ul__li"><a href="produit.html">Produits</a></li>
@@ -36,7 +36,7 @@
                     </ul>
                 </div>
                 </div>
-            </div>
+            </div>-->
             <div class="navbar__mon-panier">
                 <a href="recap.html"><i class="fas fa-shopping-basket fa-2x"></i></a>
             </div>
@@ -64,24 +64,13 @@
             </tbody>
             <tfoot>
                 <th id="totalpanier"></th>
-                <tr>
-                    <th>Total du panier :</th>
-                        <th>
-                            <tr>
-                                
-                            </tr>
-                        </th>
-                    </tr>
+
             </tfoot>
         </table>
-        <div id="macommande">
-
-        </div>
-        
         </div>    
             
-        <div class="button-videp">
-                <button onclick="supprimePanier()">Vider mon panier <i class="fas fa-trash-alt"></i></button>
+        <div id="button-videp">
+               
         </div>
     
             <h4>Pour valider votre commande, merci de remplir ce formulaire :</h4>
@@ -113,7 +102,7 @@
             </div>
         </div>
             <div class="button-valid">
-            <a href="recapfinal.html"><button onclick="recupdonnee()" >Valider Votre Commande</button></a>
+            <a href="recapfinal.html"><button onclick="sendData" onclick="recupIdProduct()" onclick="recupdonnee()" >Valider Votre Commande</button></a>
             </div>
     </section>   
     <div class="button-retour">
