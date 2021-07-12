@@ -1,8 +1,9 @@
+
 let produit;
 let panier = [];
-let contact = {};
-let product = [];
-let tableauGlobal = product.concat(contact);
+let contact = [];
+
+
 
 let chainePanierStock = localStorage.getItem('panier');
 if(chainePanierStock != null)
@@ -119,63 +120,68 @@ function supprimePanier(i)
     window.location.reload();
 }
 
-function videPanier() 
+function videPanier(i) 
 {
-    panier.splice(0, panier.lenght);
+    panier.splice(i, panier.lenght);
     let panvid = JSON.stringify(panier);
     localStorage.setItem('panier', panvid);
     window.location.reload();
+
 }
 
 
-function recupdonnee() 
-{  
-    let donnee =
-    {
-         pren : document.querySelector('.prenom').value,
-         nom : document.querySelector('.nom').value,
-         address : document.querySelector('.adresse').value,
-         ville : document.querySelector('.ville').value,
-         mail :  document.querySelector('.mail').value
-    }  
+function sendData()
+{
     
-    contact.push(donnee);
-}
+    event.preventDefault()
 
-function recupIdProduct()
-{
-    for( let i=0; i<panier.lenght; i++)
-    {
-        let idproduct = panier[i]._id;
-        product.push(idproduct);
+    let contact = { 
+        firstName: document.querySelector('.prenom').value,
+        lastName: document.querySelector('.nom').value,
+        address: document.querySelector('.adresse').value,
+        city: document.querySelector('.ville').value,
+        email: document.querySelector('.mail').value
+    };
+
+    let products =[];
+
+    for ( let i =0; i<panier.lenght;i++)
+    {   
+        let prif = panier[i]._id;
+        products.push(prif);
     }
+     
+    fetch("http://localhost:3000/api/cameras/order", {
+        method:'POST',
+        headers: {
+            'Accept': 'application/Json',
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify({
+            contact: contact,
+            products: products
+        })
+
+    })
+    .then(res=>res.json())
+    .then( data =>{
+        console.log(data);
+        window.location.href = `recapfinal.html?id=${data.orderId} + ${document.querySelector('#totalpanier').innerHTML}`; 
+    })
+
 }
 
-function sendData(data)
-{
-    let requete = new XMLHttpRequest();
-    let FD = new FormData();
-
-    for( tableauGlobal of data)
-    {
-        FD.append( tableauGlobal, data[tableauGlobal]);
-    }
-    requete.open('POST', 'front-end/recapfinal.html');
-    requete.send(FD);
-}
-
-function getRandomInt(max)
-{
-    return Math.floor(Math.random()*max);
-}
 
 function recapfinal()
-{
+{    
+    let params = (new URL (document.location)).searchParams;
+    let idf = params.get('id');
+
     let recap = document.querySelector('.recap-final__numcom')
+
     recap.innerHTML += `  
-    Nom : ${tableauGlobal[product._id] + '' + tableauGlobal[contact.nom]}        
-    <h5>Recapitulatif de vôtre commande : ${tableauGlobal[product]}</h5>
-    <h4>Numero de commande :</h4>
-    <h4>Montant total de vôtre commande : </h4>
-    `;
+    <h5>Recapitulatif de vôtre commande : </h5>
+    <h4>Numero de commande: ${idf}</h4>
+    `;    
 }
+

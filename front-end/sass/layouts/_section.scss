@@ -40,6 +40,12 @@
     }
     }
 }
+.container
+{
+    padding: 0;
+    border-left: 1px solid #339CFF;
+    border-right: 1px solid #339CFF;
+}
 //Page produit
 
 #produit
@@ -158,9 +164,17 @@
         margin-left: 20%;
         margin-right: 20%;
         margin-top: 30px;
-        margin-bottom: 30px;
+        margin-bottom: 30px;    
+        &__two
+    {
+        width: 60%;
+        margin-left: 20%;
+        margin-right: 20%;
+        background-color: white;
+        border: 1px solid white;
     }
-    
+    } 
+
 }
 .recap-final__numcom h5
 {
@@ -169,4 +183,11 @@
 .recap-final__numcom h4
 {
     margin-left: 30px;
+}
+.recap-final h5
+{
+    width:80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
 }
