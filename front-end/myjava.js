@@ -3,8 +3,6 @@ let produit;
 let panier = [];
 let contact = [];
 
-
-
 let chainePanierStock = localStorage.getItem('panier');
 if(chainePanierStock != null)
 {
@@ -102,11 +100,10 @@ function affichePanier()
         totalpan.innerHTML = `
     <tr>
         <th>Total du panier :</th>
-        <th>
-            <tr>
+        <th>     
              ${somme = somme + panier[i].price/100} &euro;           
-            </tr>
         </th>
+        <th></th>
     </tr>
          `; 
     }  
