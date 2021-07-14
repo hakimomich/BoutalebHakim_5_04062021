@@ -8,8 +8,7 @@
     background-color: white;
     padding: 10px;
     box-shadow: 2px 2px 5px rgb(210 210 210);
-    width: 85%;
-    margin-right: 15px;
+    width: 100%;
     transform: scale(1);
     transition-duration: 500ms;
     transform-origin: 50% 50%;
@@ -20,6 +19,8 @@
     }
 }
 }
+
+
 .fa-shopping-basket
 {
     color: #f8f9f9;
@@ -74,7 +75,6 @@
 .button-valid button
 {
     width: 100%;
-    margin-left: 100%;
     padding: 15px;
     margin-top: 30px;
     margin-bottom: 30px;

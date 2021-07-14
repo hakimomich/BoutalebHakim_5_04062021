@@ -120,20 +120,18 @@ function supprimePanier(i)
     window.location.reload();
 }
 
-function videPanier(i) 
+function videPanier() 
 {
-    panier.splice(i, panier.lenght);
-    let panvid = JSON.stringify(panier);
-    localStorage.setItem('panier', panvid);
+    localStorage.removeItem('panier');
     window.location.reload();
 
 }
 
-
+let products =[];
 function sendData()
 {
     
-    event.preventDefault()
+    event.preventDefault();
 
     let contact = { 
         firstName: document.querySelector('.prenom').value,
@@ -143,14 +141,14 @@ function sendData()
         email: document.querySelector('.mail').value
     };
 
-    let products =[];
+    
 
-    for ( let i =0; i<panier.lenght;i++)
-    {   
-        let prif = panier[i]._id;
-        products.push(prif);
+    for( prod of panier)
+    { 
+        let proud = prod._id;
+        products.push(proud);
     }
-     
+    
     fetch("http://localhost:3000/api/cameras/order", {
         method:'POST',
         headers: {
@@ -166,7 +164,7 @@ function sendData()
     .then(res=>res.json())
     .then( data =>{
         console.log(data);
-        window.location.href = `recapfinal.html?id=${data.orderId} + ${document.querySelector('#totalpanier').innerHTML}`; 
+        window.location.href = `recapfinal.html?id=${data.orderId}&total=${document.querySelector('#totalpanier').innerHTML}`; 
     })
 
 }
@@ -176,12 +174,14 @@ function recapfinal()
 {    
     let params = (new URL (document.location)).searchParams;
     let idf = params.get('id');
-
+    let tot = params.get('total');
+   
     let recap = document.querySelector('.recap-final__numcom')
-
+    
     recap.innerHTML += `  
     <h5>Recapitulatif de vôtre commande : </h5>
     <h4>Numero de commande: ${idf}</h4>
-    `;    
+    <h4> montant total : ${tot}</h4>
+    `;   
 }
 

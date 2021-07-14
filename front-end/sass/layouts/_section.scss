@@ -31,15 +31,34 @@
         width: 100%;
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
         &__p
     {
-        width: 40%;
-        margin-left: 10px;
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 10px;
     }
     }
 }
+
+.bund__legend a 
+{
+    margin-right: 10px;
+}
+
+@media (max-width:510px) {
+    .bund__legend
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+}
+
 .container
 {
     padding: 0;
